@@ -1,0 +1,185 @@
+libtomcrypt (1.18.2-5) unstable; urgency=low
+
+  [Debian Janitor]
+  * Set debhelper-compat version in Build-Depends.
+  * Set field Upstream-Contact in debian/copyright.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata (already
+    present in machine-readable debian/copyright).
+
+  [Nicolas Mora]
+  * Set upstream metadata fields: Bug-Database, Repository, Repository-Browse.
+  * d/control: Update Standards-Version to 4.5.1 (no change)
+  * d/control: Update debhelper-compat version to 13
+  * d/watch: upgrade to version 4
+  * d/control: add Rules-Requires-Root
+  * d/control: Remove dh-exec from builddep
+  * d/not-installed: ignore libtomcrypt.la
+
+ -- Nicolas Mora <babelouest@debian.org>  Wed, 03 Feb 2021 21:03:49 -0500
+
+libtomcrypt (1.18.2-4) unstable; urgency=medium
+
+  * Make build reproductible (Closes: #824951)
+
+ -- Nicolas Mora <nicolas@babelouest.org>  Thu, 21 May 2020 21:10:07 -0400
+
+libtomcrypt (1.18.2-3) unstable; urgency=medium
+
+  * d/control: Add package texlive-latex-extra as build-dependency
+    (Closes: #952246)
+  * Update Standards-Version to 4.5.0 (No change)
+  * Fix CVE-2019-17362 based on upstream patch #508
+
+ -- Nicolas Mora <nicolas@babelouest.org>  Sun, 23 Feb 2020 12:51:31 -0500
+
+libtomcrypt (1.18.2-2) unstable; urgency=medium
+
+  * d/control: Set Vcs-* to salsa.debian.org (Ondřej Nový)
+  * New maintainer (Closes: #930309)
+  * Update Standards-Version to 4.3.0 (No change)
+  * d/rules: Add override_dh_auto_test command to run tests
+  * d/libtomcrypt1.symbols: Add symbols file
+  * d/tests: Add reproductible tests
+  * d/*.install: Add multiarch installation
+  * debhelper: upgrade to version 12
+  * Standards-Version: upgrade to 4.3.0
+  * d/rules: remove argument --parallel
+  * d/upstream/metadata: add metadata file
+
+ -- Nicolas Mora <nicolas@babelouest.org>  Sat, 22 Jun 2019 09:17:17 -0400
+
+libtomcrypt (1.18.2-1) unstable; urgency=medium
+
+  * New upstream version 1.18.2, containing fixes for
+    CVE-2018-12437
+    CVE-2018-0739
+    (Closes: #901626)
+  * debian/docs: README → README.md, remove TODO (Closes: #903334)
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Wed, 11 Jul 2018 17:55:41 +0200
+
+libtomcrypt (1.18.1-1) unstable; urgency=medium
+
+  * New upstream version 1.18.1
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Mon, 22 Jan 2018 12:49:15 +0100
+
+libtomcrypt (1.18.0-1) unstable; urgency=medium
+
+  * Convert and move upstream signing key
+  * Update debian/watch for new upstream location
+  * Update upstream signing-key to new maintainer’s key
+  * New upstream version 1.18.0
+  * Drop debian/patches (all applied upstream)
+  * Set V=1 for verbose builds
+  * Build with PREFIX=/usr
+  * SONAME changed from 0 to 1
+  * Convert debian/copyright to DEP-5
+  * Enable all hardening
+  * Bump Standards-Version to 4.1.1 (no changes necessary)
+  * Enable parallel build
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Tue, 10 Oct 2017 19:03:49 +0200
+
+libtomcrypt (1.17-9) unstable; urgency=medium
+
+  * Change priority from extra to optional as per policy (closes: #848036)
+  * Update Vcs-* tags to secure URIs
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Sun, 18 Dec 2016 17:25:22 +0100
+
+libtomcrypt (1.17-8) unstable; urgency=high
+
+  * Add debian/patches/CVE-2016-6129.patch, backport of upstream’s
+    https://github.com/libtom/libtomcrypt/commit/5eb9743410 to fix
+    CVE-2016-6129, a bleichenbacher signature attack on RSA.
+    (Closes: #837042)
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Tue, 13 Sep 2016 10:00:27 +0200
+
+libtomcrypt (1.17-7) unstable; urgency=medium
+
+  * Update website to libtom.net (closes: #785580)
+  * s/crypthographic/cryptographic/g (Closes: #763678)
+  * debian/patches/fix-latex-here.patch: fix build with newer LaTeX
+    (Thanks Martin Michlmayr) (Closes: #790321)
+  * Use ${misc:Pre-Depends} instead of multiarch-support directly
+  * Bump Standards-Version to 3.9.6 (no changes necessary)
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Sun, 28 Jun 2015 20:29:17 +0200
+
+libtomcrypt (1.17-6) unstable; urgency=medium
+
+  * Add Build-Dependency on libtool-bin (Closes: #761769)
+  * Add “s” to “architectures” in package description (Closes: #755755)
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Mon, 29 Sep 2014 19:38:45 +0200
+
+libtomcrypt (1.17-5) unstable; urgency=low
+
+  * add patches:
+    - deterministic-latex.patch (Closes: #734109)
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Sat, 04 Jan 2014 16:34:43 +0100
+
+libtomcrypt (1.17-4) unstable; urgency=low
+
+  * Acknowledge previous two NMUs.
+  * Update Homepage URL to libtom.org (Closes: #732779)
+  * Put packaging into git on collab-maint
+  * Remove obsolete DM-Upload-Allowed field from debian/control
+  * Email change: Michael Stapelberg -> stapelberg@debian.org
+  * Use 3.0 (quilt) package format
+  * add patches:
+    - fix-clean-target.patch
+    - add-pkgconfig-file.patch
+    - dont-build-testprof.patch
+    - verbose-build-logs.patch
+    - respect-ldflags.patch
+    - x32-fixes.patch (Closes: #732780)
+  * Use debhelper 9 and dh(1)
+  * (re-)build documentation
+  * Fix libtomcrypt-dev package description
+  * Add debian/watch file and debian/upstream-signing-key.pgp
+  * Add doc-base file
+  * Bump standards-version to 3.9.5.0 (no changes necessary)
+  * Convert to multi-arch
+  * Enable hardening
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Thu, 02 Jan 2014 07:32:38 +0100
+
+libtomcrypt (1.17-3.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Don't ship .la files (Closes: #622552).
+
+ -- Luk Claes <luk@debian.org>  Sun, 26 Jun 2011 16:44:22 +0200
+
+libtomcrypt (1.17-3.1) unstable; urgency=low
+
+  * NMU.  Change dependency libgmp3-dev --> libgmp-dev.
+
+ -- Steve M. Robbins <smr@debian.org>  Thu, 17 Mar 2011 22:49:52 -0500
+
+libtomcrypt (1.17-3) unstable; urgency=low
+
+  * Define -DLTM_DESC to enable the libtommath functions
+    (Thanks Cezary and Pali)
+  * Add ${misc:Depends}
+  * Bump standards-version
+
+ -- Michael Stapelberg <michael@stapelberg.de>  Wed, 12 Jan 2011 14:12:02 +0100
+
+libtomcrypt (1.17-2) unstable; urgency=low
+
+  * Define -DGMP_DESC to use the gmp3 arithmetic library. This makes most
+    crypto functions of libtomcrypt actually useful. (Thanks Alexander)
+  * Bump standards-version
+
+ -- Michael Stapelberg <michael@stapelberg.de>  Sun, 29 Nov 2009 22:07:27 +0100
+
+libtomcrypt (1.17-1) unstable; urgency=low
+
+  * Initial release (Closes: #522966)
+
+ -- Michael Stapelberg <michael@stapelberg.de>  Wed, 03 Jun 2009 22:43:07 +0200

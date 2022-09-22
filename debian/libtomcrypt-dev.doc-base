@@ -1,0 +1,8 @@
+Document: libtomcrypt
+Title: libtomcrypt documentation
+Author: Tom St Denis
+Abstract: The documentation explains how to use libtomcrypt.
+Section: Programming/C
+
+Format: PDF
+Files: /usr/share/doc/libtomcrypt-dev/*.pdf.gz

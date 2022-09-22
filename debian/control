@@ -1,0 +1,48 @@
+Source: libtomcrypt
+Priority: optional
+Maintainer: Nicolas Mora <babelouest@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               libtool,
+               libtool-bin,
+               libgmp-dev,
+               libtommath-dev,
+               texlive-latex-base,
+               texlive-latex-recommended,
+               texlive-latex-extra,
+               ghostscript,
+               pkg-config
+Standards-Version: 4.5.1
+Section: libs
+Homepage: https://www.libtom.net/LibTomCrypt/
+Vcs-Browser: https://salsa.debian.org/debian/libtomcrypt
+Vcs-Git: https://salsa.debian.org/debian/libtomcrypt.git
+Rules-Requires-Root: no
+
+Package: libtomcrypt-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libtomcrypt1 (= ${binary:Version}), ${misc:Depends}
+Description: static library, header files and documentation for libtomcrypt
+ LibTomCrypt is a well documented, public domain open source cryptographic
+ toolkit written in C. It supports lots of block ciphers (Blowfish, Twofish,
+ AES, XTEA, ...), chaining modes (ECB, CBC, OFB, CFB, CTR, ...), hash functions
+ (MD5, SHA-1, SHA-256, RIPE-MD, ...), HMAC mechanisms, pseudo-random number
+ generators and public key algorithms. It has several optimizations for the
+ i386, x86_64 and ppc32 architectures.
+ .
+ This package contains include files and a statically linked version of the
+ library.
+
+Package: libtomcrypt1
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: public domain open source cryptographic toolkit
+ LibTomCrypt is a well documented, public domain open source cryptographic
+ toolkit written in C. It supports lots of block ciphers (Blowfish, Twofish,
+ AES, XTEA, ...), chaining modes (ECB, CBC, OFB, CFB, CTR, ...), hash functions
+ (MD5, SHA-1, SHA-256, RIPE-MD, ...), HMAC mechanisms, pseudo-random number
+ generators and public key algorithms. It has several optimizations for the
+ i386, x86_64 and ppc32 architectures.
