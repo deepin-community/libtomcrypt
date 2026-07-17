@@ -1,3 +1,19 @@
+libtomcrypt (1.18.2+dfsg-7) unstable; urgency=medium
+
+  * Repack source without doc/crypt.pdf (Closes: #1046608)
+  * d/rules: cleanup doc/crypt.pdf after build
+  * d/copyright: Add comment for excluding doc/crypt.pdf
+  * d/control: Update Standards-Version to 4.6.2 (no change)
+
+ -- Nicolas Mora <babelouest@debian.org>  Sat, 09 Sep 2023 09:36:03 -0400
+
+libtomcrypt (1.18.2-6) unstable; urgency=medium
+
+  * d/watch: Fix github release watch
+  * d/control: Update Standards-Version to 4.6.1 (no change)
+
+ -- Nicolas Mora <babelouest@debian.org>  Sun, 02 Oct 2022 09:59:36 -0400
+
 libtomcrypt (1.18.2-5) unstable; urgency=low
 
   [Debian Janitor]

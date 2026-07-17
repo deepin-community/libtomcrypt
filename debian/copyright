@@ -2,6 +2,8 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: libtomcrypt
 Source: http://www.libtom.net/
 Upstream-Contact: info@libtom.net
+Files-Excluded: doc/crypt.pdf
+Comment: doc/crypt.pdf is build during packaging
 
 Files: *
 Copyright: 2003 Tom St Denis
@@ -9,7 +11,7 @@ License: public-domain or WTFPL-2
 
 Files: debian/*
 Copyright: 2009 Michael Stapelberg
-           2019 Nicolas Mora <babelouest@debian.org>
+           2019-2022 Nicolas Mora <babelouest@debian.org>
 License: GPL-3
 
 License: public-domain
