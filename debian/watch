@@ -1,3 +1,6 @@
 version=4
-opts=pgpsigurlmangle=s/\.tar\.xz/\.tar\.xz\.asc/ \
-  https://github.com/libtom/libtomcrypt/releases .*/crypt-([0-9.]+)\.tar\.xz
+# https://github.com/libtom/libtomcrypt
+opts=\
+dversionmangle=s/\+(debian|dfsg|ds|deb)(\.\d+)?$//,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/libtomcrypt-$1/ \
+ https://github.com/libtom/libtomcrypt/tags .*/v?([\d\.]+).tar.gz

@@ -25,5 +25,9 @@ override_dh_auto_build:
 override_dh_auto_install:
 	$(MAKE) DESTDIR=$(CURDIR)/debian/tmp INSTALL_GROUP=root LIBPATH=/usr/lib/$(DEB_HOST_MULTIARCH) PREFIX=/usr install -f makefile.shared
 
+override_dh_auto_clean:
+	rm -f doc/crypt.pdf
+	dh_auto_clean --
+
 %:
 	dh $@
